@@ -36,7 +36,6 @@ public class ClienteResource {
 		
 		return ResponseEntity.ok().body(obj);
 	}
-	
 
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Void> update(@Valid @RequestBody ClienteDTO objDTO, @PathVariable Integer id){
