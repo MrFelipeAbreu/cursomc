@@ -34,6 +34,7 @@ public class PedidoService {
 	@Autowired
 	private EmailService emailService;
 	
+	
 	public Pedido find(Integer id) {
 		Pedido obj = repo.findOne(id);
 		
@@ -70,9 +71,7 @@ public class PedidoService {
 		
 		itemPedidoRepository.save(obj.getItens());
 		
-		emailService.sendOrderCofirmationEmail(obj);
-		
-		
+		emailService.sendOrderConfirmationHtmlEmail(obj);
 		
 		return obj;
 		
